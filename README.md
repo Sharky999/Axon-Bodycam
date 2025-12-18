@@ -6,7 +6,7 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 
 ## 📸 Screenshots
 
-| Overlay Example | Recording Active | Muted State |
+| Overlay Example | Recording Active | Muted State | Report-Tags |
 |:---:|:---:|:---:|
 | ![Overlay](images/Example1%20Bodycamoverlay.png) | ![Recording](images/Whenrecordingexmp2.png) | ![Muted](images/MutedExample3.png) | ![Report-Tags](images/ReportnumExample4.png) |
 
@@ -31,10 +31,11 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 
 ## 📥 Installation
 
-1. Download `Axon Bodycam Recorder Setup 1.0.0.exe` from this repository
-2. Run the installer (you may need to bypass antivirus warnings - see above)
-3. The app will install and launch automatically
-4. Follow the license activation steps below
+1. Go to the [**Releases**](https://github.com/Sharky999/Axon-Bodycam/releases) page
+2. Download the latest `Axon Bodycam Recorder Setup x.x.x.exe`
+3. Run the installer (you may need to bypass antivirus warnings - see above)
+4. The app will install and launch automatically
+5. Follow the license activation steps below
 
 ---
 
