@@ -1,4 +1,4 @@
-# ⬡ Axon Bodycam Recorder
+# <img src="images/logo.png" width="35" height="35"> Axon Bodycam Recorder
 
 A realistic bodycam overlay application for FiveM roleplay, designed to simulate an authentic law enforcement bodycam experience with automatic recording management.
 
