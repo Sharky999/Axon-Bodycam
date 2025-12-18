@@ -6,9 +6,9 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 
 ## 📸 Screenshots
 
-| Overlay Example | Recording Active | Muted State | Report-Tags |
-|:---:|:---:|:---:|
-| ![Overlay](images/Example1%20Bodycamoverlay.png) | ![Recording](images/Whenrecordingexmp2.png) | ![Muted](images/MutedExample3.png) | ![Report-Tags](images/ReportnumExample4.png) |
+| Overlay Example | Recording Active | Muted State | Report Tags |
+|:---:|:---:|:---:|:---:|
+| ![Overlay](images/Example1%20Bodycamoverlay.png) | ![Recording](images/Whenrecordingexmp2.png) | ![Muted](images/MutedExample3.png) | ![Report Tags](images/ReportnumExample4.png) |
 
 ---
 
