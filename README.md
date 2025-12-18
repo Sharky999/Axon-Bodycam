@@ -8,7 +8,7 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 
 | Overlay Example | Recording Active | Muted State |
 |:---:|:---:|:---:|
-| ![Overlay](images/Example1%20Bodycamoverlay.png) | ![Recording](images/Whenrecordingexmp2.png) | ![Muted](images/MutedExample3.png) |
+| ![Overlay](images/Example1%20Bodycamoverlay.png) | ![Recording](images/Whenrecordingexmp2.png) | ![Muted](images/MutedExample3.png) | ![Report-Tags](images/ReportnumExample4.png) |
 
 ---
 
@@ -137,6 +137,11 @@ Edit this file to customize:
 - Fully repositionable with move mode
 - Stays on top of fullscreen games
 - Adjustable scale
+
+### 🔄 Automatic Updates
+- App automatically checks for updates on startup
+- Prompts you when a new version is available
+- One-click download and install
 
 ---
 
