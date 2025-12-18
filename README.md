@@ -43,7 +43,7 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 This application requires a license key to use.
 
 **To get a license key:**
-1. Contact **sharky999** on Discord
+1. Contact **shrky999** on Discord
 2. Request a license key
 3. Enter the key in the activation window
 4. Click "Activate License" (requires internet connection)
@@ -188,7 +188,7 @@ Edit this file to customize:
 ## 📞 Support
 
 For support, license keys, or questions:
-- Discord: **sharky999**
+- Discord: **shrky999**
 
 ---
 
