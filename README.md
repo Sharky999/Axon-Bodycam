@@ -42,6 +42,8 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 ## 🔑 License Activation
 
 This application requires a license key to use.
+This is to prevent people from sharing this without my permission
+However it is a free application so once you recieve a key you have access to the app forever.
 
 **To get a license key:**
 1. Contact **shrky999** on Discord
