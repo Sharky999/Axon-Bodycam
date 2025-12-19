@@ -94,6 +94,7 @@ Edit this file to customize:
   "obsWebSocketPort": 4455,
   "obsWebSocketPassword": "your-obs-password",
   "enableReportTag": true,
+  "enableRecordingLog": true,
   "screenScale": 0.75
 }
 ```
@@ -108,6 +109,7 @@ Edit this file to customize:
 | `obsWebSocketPort` | OBS WebSocket port (default: 4455) |
 | `obsWebSocketPassword` | Your OBS WebSocket password |
 | `enableReportTag` | Enable/disable report number prompt (true/false) |
+| `enableRecordingLog` | Enable/disable recording log file (true/false) |
 | `screenScale` | Size of the bodycam screen overlay (0.5 - 1.5) |
 | `keybinds.toggleRecording` | Key to start/stop recording (default: "Q") |
 | `keybinds.toggleMute` | Key to toggle mute (default: "F9") |
@@ -133,6 +135,15 @@ Edit this file to customize:
 - Automatically renames and organizes footage
 - Can be toggled on/off via `enableReportTag` in config
 - Perfect for organizing evidence by case number
+
+### 📝 Recording Log
+- Automatically logs all recordings to `Recording Log.txt` in your output folder
+- Each entry includes: date/time, player, agency, duration, filename, and report number
+- Can be toggled on/off via `enableRecordingLog` in config
+- Example log entry:
+  ```
+  [12/19/2025 08:30:45 PM] B. MASON - ALABAMA SHERIFFS OFFICE | Duration: 02:35 | File: 25-1234 - 2025-12-19_20-30-45.mp4 | Report #: 25-1234
+  ```
 
 ### 🎥 Automatic Recording Management
 - Integrates with OBS replay buffer
