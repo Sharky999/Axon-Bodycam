@@ -176,6 +176,16 @@ To change keybinds, add a `keybinds` section to your `config.json`:
 }
 ```
 
+### Supported Key Names
+| Key Type | Examples |
+|----------|----------|
+| Letters | `A`, `B`, `Q`, `R`, etc. |
+| Function Keys | `F1`, `F2`, ... `F12` |
+| Special Keys | `Delete`, `Backspace`, `Insert`, `Home`, `End`, `Space` |
+| With Modifiers | `Ctrl+M`, `Alt+F4`, `Shift+F9`, `Ctrl+Shift+R` |
+
+**Tip:** Avoid keys commonly used in games (WASD, E, R, Shift, Ctrl) for the recording toggle.
+
 ### Move Mode
 1. Press your move mode key (default: `F11`) to enable move mode
 2. Drag either overlay to your desired position
