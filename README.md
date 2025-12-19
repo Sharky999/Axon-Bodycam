@@ -76,7 +76,6 @@ This app integrates with OBS Studio for recording. You need:
    - Set your desired recording path
 
 5. **Recording Settings**
-
     - Go to `Settings` → `Output` → `Recording` (This is NOT where the finished bodycam evidences will be they will be located in the config.json outputFolder) 
     - Set The the encoder to `NVIDIA NVNC H.264` or The x264 CPU encoder for non-NVIDIA users.
     - Set Recording Format to `MPEG-4(.mp4)`
