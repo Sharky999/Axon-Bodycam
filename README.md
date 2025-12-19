@@ -6,9 +6,9 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 
 ## 📸 Screenshots
 
-| Overlay Example | Recording Active | Muted State | Report Tags |
+| Overlay Example | Recording Active | Muted State | Evidence Upload |
 |:---:|:---:|:---:|:---:|
-| ![Overlay](images/Example1%20Bodycamoverlay.png) | ![Recording](images/Whenrecordingexmp2.png) | ![Muted](images/MutedExample3.png) | ![Report Tags](images/ReportnumExample4.png) |
+| ![Overlay](images/Example1%20Bodycamoverlay.png) | ![Recording](images/Whenrecordingexmp2.png) | ![Muted](images/MutedExample3.png) | ![Evidence Upload](images/ReportnumExample4.png) |
 
 ---
 
@@ -42,8 +42,8 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 ## 🔑 License Activation
 
 This application requires a license key to use.
-This is to prevent people from sharing this without my permission
-However it is a free application so once you recieve a key you have access to the app forever.
+This is to prevent people from sharing this without my permission.
+However it is a free application so once you receive a key you have access to the app forever.
 
 **To get a license key:**
 1. Contact **shrky999** on Discord
@@ -76,9 +76,9 @@ This app integrates with OBS Studio for recording. You need:
    - Set your desired recording path
 
 5. **Recording Settings**
-    - Go to `Settings` → `Output` → `Recording` (This is NOT where the finished bodycam evidences will be they will be located in the config.json outputFolder) 
-    - Set The the encoder to `NVIDIA NVNC H.264` or The x264 CPU encoder for non-NVIDIA users.
-    - Set Recording Format to `MPEG-4(.mp4)`
+    - Go to `Settings` → `Output` → `Recording` (This is NOT where the finished bodycam evidences will be - they will be located in the config.json outputFolder) 
+    - Set the encoder to `NVIDIA NVENC H.264` or the x264 CPU encoder for non-NVIDIA users
+    - Set Recording Format to `MPEG-4 (.mp4)`
     - Set Audio Encoder to `FFmpeg AAC`
 
 ### Application Configuration
@@ -101,7 +101,24 @@ Edit this file to customize:
   "obsWebSocketPassword": "your-obs-password",
   "enableReportTag": true,
   "enableRecordingLog": true,
-  "screenScale": 0.75
+  "screenScale": 0.75,
+  "evidenceCategories": [
+    "Traffic Stop",
+    "Arrest",
+    "Use of Force",
+    "Pursuit",
+    "Investigation",
+    "Domestic",
+    "Community Contact",
+    "Training",
+    "Other"
+  ],
+  "keybinds": {
+    "toggleRecording": "Q",
+    "toggleMute": "F9",
+    "powerOff": "F10",
+    "toggleMoveMode": "F11"
+  }
 }
 ```
 
@@ -114,13 +131,11 @@ Edit this file to customize:
 | `beepVolume` | Volume of tones (0.0 - 1.0) |
 | `obsWebSocketPort` | OBS WebSocket port (default: 4455) |
 | `obsWebSocketPassword` | Your OBS WebSocket password |
-| `enableReportTag` | Enable/disable report number prompt (true/false) |
+| `enableReportTag` | Enable/disable Evidence.com upload prompt (true/false) |
 | `enableRecordingLog` | Enable/disable recording log file (true/false) |
 | `screenScale` | Size of the bodycam screen overlay (0.5 - 1.5) |
-| `keybinds.toggleRecording` | Key to start/stop recording (default: "Q") |
-| `keybinds.toggleMute` | Key to toggle mute (default: "F9") |
-| `keybinds.powerOff` | Key to power off and exit (default: "F10") |
-| `keybinds.toggleMoveMode` | Key to toggle move mode (default: "F11") |
+| `evidenceCategories` | Custom categories for the Evidence.com dropdown |
+| `keybinds` | Custom keybindings (see Keybindings section) |
 
 ---
 
@@ -136,19 +151,26 @@ Edit this file to customize:
 - Recording start/stop beeps
 - Mute toggle feedback
 
-### 📁 Report Number Organizer
-- Prompts for a report/case number after each recording
-- Automatically renames and organizes footage
-- Can be toggled on/off via `enableReportTag` in config
-- Perfect for organizing evidence by case number
+### 📁 Evidence.com Style Upload (NEW!)
+After each recording, a browser window opens with an **Evidence.com-style interface** where you can:
+- Enter a report/case number
+- Select an incident category (Traffic Stop, Arrest, Use of Force, etc.)
+- Add detailed notes about the incident
+- All information is logged to your Recording Log
+
+**Benefits:**
+- Looks and feels like the real Axon Evidence.com
+- Can minimize the browser to look up report numbers
+- All fields are optional - click "Skip" to save without details
+- Automatically renames and organizes footage by report number
 
 ### 📝 Recording Log
 - Automatically logs all recordings to `Recording Log.txt` in your output folder
-- Each entry includes: date/time, player, agency, duration, filename, and report number
+- Each entry includes: date/time, player, agency, duration, filename, report number, category, and notes
 - Can be toggled on/off via `enableRecordingLog` in config
 - Example log entry:
   ```
-  [12/19/2025 08:30:45 PM] B. MASON - ALABAMA SHERIFFS OFFICE | Duration: 02:35 | File: 25-1234 - 2025-12-19_20-30-45.mp4 | Report #: 25-1234
+  [12/19/2025 08:30:45 PM] B. MASON - ALABAMA SHERIFFS OFFICE | Duration: 02:35 | File: 25-1234 - 2025-12-19_20-30-45.mp4 | Report #: 25-1234 | Category: Traffic Stop | Notes: Vehicle stop on Main St, driver cited for speeding
   ```
 
 ### 🎥 Automatic Recording Management
@@ -181,7 +203,7 @@ All keybinds can be customized in your `config.json` file. Default keybinds:
 | `F11` | Toggle move mode (reposition overlays) |
 
 ### Custom Keybinds Example
-To change keybinds, add a `keybinds` section to your `config.json`:
+To change keybinds, edit the `keybinds` section in your `config.json`:
 ```json
 {
   "keybinds": {
@@ -221,7 +243,7 @@ To change keybinds, add a `keybinds` section to your `config.json`:
 ### Recording not merging properly
 - Ensure OBS Replay Buffer is enabled
 - Check that your output folder exists and is writable
-- Make sure OBS is recording to a compatible format
+- Make sure OBS is recording to a compatible format (MP4 with AAC audio)
 
 ### Overlay not appearing over game
 - The overlay uses "screen-saver" level always-on-top
@@ -230,7 +252,12 @@ To change keybinds, add a `keybinds` section to your `config.json`:
 
 ### Screen shows "REC FAILED"
 - Ensure you disable recording keybinds in OBS settings
-- Ensure you disable Replay keybinds in OBS Settings
+- Ensure you disable Replay keybinds in OBS settings
+
+### Evidence.com page not opening
+- Make sure you have a default browser set
+- Check that port 47891 is not blocked by firewall
+- The page will timeout after 5 minutes if not submitted
 
 ---
 
@@ -238,7 +265,7 @@ To change keybinds, add a `keybinds` section to your `config.json`:
 
 - Windows 10/11
 - OBS Studio with WebSocket plugin
-- Internet connection (for license activation)
+- Internet connection (for license activation and Evidence.com interface)
 - ~200MB disk space
 
 ---
@@ -251,4 +278,3 @@ For support, license keys, or questions:
 ---
 
 *This is a fan-made project for FiveM roleplay purposes. Not affiliated with Axon Enterprise, Inc.*
-
