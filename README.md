@@ -228,6 +228,10 @@ To change keybinds, add a `keybinds` section to your `config.json`:
 - Some games with aggressive anti-cheat may block overlays
 - Try running the game in borderless windowed mode
 
+### Screen shows "REC FAILED"
+- Ensure you disable recording keybinds in OBS settings
+- Ensure you disable Replay keybinds in OBS Settings
+
 ---
 
 ## 📋 Requirements
