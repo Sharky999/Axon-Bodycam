@@ -109,6 +109,10 @@ Edit this file to customize:
 | `obsWebSocketPassword` | Your OBS WebSocket password |
 | `enableReportTag` | Enable/disable report number prompt (true/false) |
 | `screenScale` | Size of the bodycam screen overlay (0.5 - 1.5) |
+| `keybinds.toggleRecording` | Key to start/stop recording (default: "Q") |
+| `keybinds.toggleMute` | Key to toggle mute (default: "F9") |
+| `keybinds.powerOff` | Key to power off and exit (default: "F10") |
+| `keybinds.toggleMoveMode` | Key to toggle move mode (default: "F11") |
 
 ---
 
@@ -150,6 +154,8 @@ Edit this file to customize:
 
 ## ⌨️ Keybindings
 
+All keybinds can be customized in your `config.json` file. Default keybinds:
+
 | Key | Action |
 |-----|--------|
 | `Q` | Toggle recording on/off |
@@ -157,10 +163,23 @@ Edit this file to customize:
 | `F10` | Power off and exit application |
 | `F11` | Toggle move mode (reposition overlays) |
 
-### Move Mode (F11)
-1. Press `F11` to enable move mode
+### Custom Keybinds Example
+To change keybinds, add a `keybinds` section to your `config.json`:
+```json
+{
+  "keybinds": {
+    "toggleRecording": "R",
+    "toggleMute": "F8",
+    "powerOff": "F12",
+    "toggleMoveMode": "F7"
+  }
+}
+```
+
+### Move Mode
+1. Press your move mode key (default: `F11`) to enable move mode
 2. Drag either overlay to your desired position
-3. Press `F11` again or click to save positions
+3. Press the key again or click to save positions
 4. Positions are saved and remembered
 
 ---
