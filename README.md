@@ -4,6 +4,15 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 
 ---
 
+## 🆕 What's New
+
+### Version 1.0.7
+- **OBS Browser Source Support** - Game Capture users can now use the overlay! Enable `enableCaptureWindow` in config and add `http://localhost:47890/overlay` as a Browser Source in OBS with true transparency.
+- **"CHECK BROWSER" Notification** - When Evidence.com upload opens, an orange notification appears on the overlay reminding you to check your browser.
+- **Auto-Config Migration** - New config options are automatically added to existing user configs on update.
+
+---
+
 ## 📸 Screenshots
 
 | Overlay Example | Recording Active | Muted State | Evidence Upload |
@@ -101,6 +110,7 @@ Edit this file to customize:
   "obsWebSocketPassword": "your-obs-password",
   "enableReportTag": true,
   "enableRecordingLog": true,
+  "enableCaptureWindow": false,
   "screenScale": 0.75,
   "evidenceCategories": [
     "Traffic Stop",
@@ -133,6 +143,7 @@ Edit this file to customize:
 | `obsWebSocketPassword` | Your OBS WebSocket password |
 | `enableReportTag` | Enable/disable Evidence.com upload prompt (true/false) |
 | `enableRecordingLog` | Enable/disable recording log file (true/false) |
+| `enableCaptureWindow` | Enable OBS Browser Source server for Game Capture users (true/false) |
 | `screenScale` | Size of the bodycam screen overlay (0.5 - 1.5) |
 | `evidenceCategories` | Custom categories for the Evidence.com dropdown |
 | `keybinds` | Custom keybindings (see Keybindings section) |
@@ -151,7 +162,7 @@ Edit this file to customize:
 - Recording start/stop beeps
 - Mute toggle feedback
 
-### 📁 Evidence.com Style Upload (NEW!)
+### 📁 Evidence.com Style Upload
 After each recording, a browser window opens with an **Evidence.com-style interface** where you can:
 - Enter a report/case number
 - Select an incident category (Traffic Stop, Arrest, Use of Force, etc.)
@@ -163,6 +174,7 @@ After each recording, a browser window opens with an **Evidence.com-style interf
 - Can minimize the browser to look up report numbers
 - All fields are optional - click "Skip" to save without details
 - Automatically renames and organizes footage by report number
+- Orange "CHECK BROWSER" notification appears on overlay when upload is ready
 
 ### 📝 Recording Log
 - Automatically logs all recordings to `Recording Log.txt` in your output folder
@@ -188,6 +200,28 @@ After each recording, a browser window opens with an **Evidence.com-style interf
 - App automatically checks for updates on startup
 - Prompts you when a new version is available
 - One-click download and install
+
+### 🎮 OBS Browser Source (For Game Capture Users)
+If you use **Game Capture** instead of Display Capture, you can now add the overlay as a Browser Source!
+
+**Setup:**
+1. Set `"enableCaptureWindow": true` in your `config.json`
+2. Restart the Bodycam app
+3. In OBS: **Sources** → **Add** → **Browser**
+4. **URL**: `http://localhost:47890/overlay`
+5. **Width**: Your screen width (e.g., 1920)
+6. **Height**: Your screen height (e.g., 1080)
+7. Add this **Custom CSS**:
+   ```css
+   body { background-color: rgba(0,0,0,0); }
+   ```
+8. Click **OK** and position the Browser Source above your Game Capture
+
+**Benefits:**
+- True transparency (no green screen needed!)
+- Overlay positions match your config settings
+- Updates in real-time (recording status, timer, muted indicator)
+- Works alongside the normal overlay for Display Capture users
 
 ---
 
@@ -258,6 +292,13 @@ To change keybinds, edit the `keybinds` section in your `config.json`:
 - Make sure you have a default browser set
 - Check that port 47891 is not blocked by firewall
 - The page will timeout after 5 minutes if not submitted
+
+### Browser Source not showing in OBS
+- Make sure the Bodycam app is running
+- Verify `enableCaptureWindow` is set to `true` in config
+- Try opening `http://localhost:47890/overlay` in your browser first
+- Click "Refresh cache of current page" in OBS Browser Source properties
+- Ensure the Browser Source dimensions match your screen size
 
 ---
 
