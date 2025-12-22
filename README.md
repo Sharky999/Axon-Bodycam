@@ -1,6 +1,10 @@
 # <img src="images/logo.png" width="35" height="35"> Axon Bodycam Recorder
 
-A realistic bodycam overlay application for FiveM roleplay, designed to simulate an authentic law enforcement bodycam experience with automatic recording management.
+A **free** realistic bodycam overlay application for FiveM roleplay, designed to simulate an authentic law enforcement bodycam experience with automatic recording management.
+
+**🎉 100% Free** - No license keys, no subscriptions, no paywalls. Just download and use!
+
+<a href="https://ko-fi.com/sharkyaxon"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi"></a>
 
 ---
 
@@ -44,21 +48,7 @@ A realistic bodycam overlay application for FiveM roleplay, designed to simulate
 2. Download the latest `Axon Bodycam Recorder Setup x.x.x.exe`
 3. Run the installer (you may need to bypass antivirus warnings - see above)
 4. The app will install and launch automatically
-5. Follow the license activation steps below
-
----
-
-## 🔑 License Activation
-
-This application requires a license key to use.
-This is to prevent people from sharing this without my permission.
-However it is a free application so once you receive a key you have access to the app forever.
-
-**To get a license key:**
-1. Contact **shrky999** on Discord
-2. Request a license key
-3. Enter the key in the activation window
-4. Click "Activate License" (requires internet connection)
+5. Configure your settings and you're ready to go!
 
 ---
 
@@ -306,15 +296,19 @@ To change keybinds, edit the `keybinds` section in your `config.json`:
 
 - Windows 10/11
 - OBS Studio with WebSocket plugin
-- Internet connection (for license activation and Evidence.com interface)
+- Internet connection (for Evidence.com interface and auto-updates)
 - ~200MB disk space
 
 ---
 
 ## 📞 Support
 
-For support, license keys, or questions:
+For support or questions:
 - Discord: **shrky999**
+
+If you enjoy this free app, consider supporting development:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/sharkyaxon)
 
 ---
 
