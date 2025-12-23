@@ -10,6 +10,11 @@ A **free** realistic bodycam overlay application for FiveM roleplay, designed to
 
 ## 🆕 What's New
 
+### Version 1.1.0
+- **Now 100% Free!** - No license keys required. Just download and use.
+- **Smaller Installer** - Reduced from ~400MB to ~100MB by removing unnecessary build dependencies.
+- **Improved Auto-Updates** - Better GitHub release integration for seamless updates.
+
 ### Version 1.0.7
 - **OBS Browser Source Support** - Game Capture users can now use the overlay! Enable `enableCaptureWindow` in config and add `http://localhost:47890/overlay` as a Browser Source in OBS with true transparency.
 - **"CHECK BROWSER" Notification** - When Evidence.com upload opens, an orange notification appears on the overlay reminding you to check your browser.
@@ -27,18 +32,41 @@ A **free** realistic bodycam overlay application for FiveM roleplay, designed to
 
 ## ⚠️ Important: Antivirus False Positive Warning
 
-**This application may be flagged by antivirus software as a potential threat. This is a FALSE POSITIVE.**
+**This application may be flagged by antivirus software as a "keylogger" or "info stealer". This is a FALSE POSITIVE.**
 
 ### Why does this happen?
-- This app is built with **Electron** (the same framework used by Discord, VS Code, Slack, etc.)
-- The installer is **not code-signed** (code signing certificates cost $200-400/year)
-- Antivirus software often flags unsigned applications as suspicious, even when they're completely safe
+
+#### 🔑 "Keylogger" Detection
+This app uses **global hotkeys** that work even when you're in a game. To do this, it uses low-level keyboard hooks - the **same Windows API** that real keyloggers use. Antivirus software cannot tell the difference between:
+- ✅ Our legitimate use (detecting when you press Q to start recording)
+- ❌ A malicious keylogger (recording everything you type)
+
+**The app only listens for YOUR configured hotkeys (Q, F9, F10, F11 by default). It does NOT record, store, or transmit any keystrokes.**
+
+#### 📦 Unsigned Application
+- The installer is **not code-signed** (certificates cost $200-400/year)
+- This app is built with **Electron** (same framework as Discord, VS Code, Slack)
+- Antivirus flags unsigned apps as suspicious, even when completely safe
 - This is extremely common with independent/hobby software projects
 
+#### 🔍 What gets flagged
+| Detection Name | Why It's Wrong |
+|----------------|----------------|
+| Keylogger | We only listen for hotkeys, not all keystrokes |
+| Info Stealer | We don't collect or send any personal data |
+| Trojan | The code is open source - inspect it yourself! |
+
 ### What to do:
-1. **Add an exception** in your antivirus for the installer and installation folder
-2. **Windows Defender**: Click "More info" → "Run anyway" when the SmartScreen popup appears
-3. The app does NOT contain any malware, spyware, or malicious code
+1. **Add an exception** in your antivirus for the installer and installation folder:
+   - Installer: `Axon Bodycam Recorder Setup x.x.x.exe`
+   - Install folder: `C:\Users\[You]\AppData\Local\Programs\axon-bodycam-recorder\`
+2. **Windows Defender**: Click "More info" → "Run anyway" when SmartScreen appears
+3. **VirusTotal**: Many engines flag it, but major ones (Microsoft, ESET, Kaspersky) typically don't
+
+### 🛡️ Verify for yourself
+- The source code is **100% open source** - review it on this GitHub
+- Check `main.js` - you can see exactly what the keyboard listener does
+- The app only communicates with: OBS (localhost), your browser (localhost), and GitHub (for updates)
 
 ---
 
