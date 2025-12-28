@@ -66,10 +66,6 @@ This app uses **global hotkeys** that work even when you're in a game. To do thi
 2. **Windows Defender**: Click "More info" → "Run anyway" when SmartScreen appears
 3. **VirusTotal**: Many engines flag it, but major ones (Microsoft, ESET, Kaspersky) typically don't
 
-### 🛡️ Verify for yourself
-- The source code is **100% open source** - review it on this GitHub
-- Check `main.js` - you can see exactly what the keyboard listener does
-- The app only communicates with: OBS (localhost), your browser (localhost), and GitHub (for updates)
 
 ---
 
