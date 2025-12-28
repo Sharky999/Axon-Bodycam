@@ -10,6 +10,9 @@ A **free** realistic bodycam overlay application for FiveM roleplay, designed to
 
 ## 🆕 What's New
 
+### Version 1.1.3
+- **Category Folders** - New optional feature to automatically organize recordings into subfolders by category (e.g., `Traffic Stop/`, `Arrest/`). Enable with `enableCategoryFolders: true` in config. Only works when `enableReportTag` is also enabled.
+
 ### Version 1.1.0
 - **Now 100% Free!** - No license keys required. Just download and use.
 - **Smaller Installer** - Reduced from ~400MB to ~100MB by removing unnecessary build dependencies.
@@ -129,6 +132,7 @@ Edit this file to customize:
   "enableReportTag": true,
   "enableRecordingLog": true,
   "enableCaptureWindow": false,
+  "enableCategoryFolders": false,
   "screenScale": 0.75,
   "evidenceCategories": [
     "Traffic Stop",
@@ -162,6 +166,7 @@ Edit this file to customize:
 | `enableReportTag` | Enable/disable Evidence.com upload prompt (true/false) |
 | `enableRecordingLog` | Enable/disable recording log file (true/false) |
 | `enableCaptureWindow` | Enable OBS Browser Source server for Game Capture users (true/false) |
+| `enableCategoryFolders` | Organize recordings into subfolders by category (requires `enableReportTag: true`) |
 | `screenScale` | Size of the bodycam screen overlay (0.5 - 1.5) |
 | `evidenceCategories` | Custom categories for the Evidence.com dropdown |
 | `keybinds` | Custom keybindings (see Keybindings section) |
@@ -193,6 +198,29 @@ After each recording, a browser window opens with an **Evidence.com-style interf
 - All fields are optional - click "Skip" to save without details
 - Automatically renames and organizes footage by report number
 - Orange "CHECK BROWSER" notification appears on overlay when upload is ready
+
+### 📂 Category Folders (New in 1.1.3)
+When enabled, recordings are automatically organized into subfolders based on the category you select in Evidence.com.
+
+**Setup:**
+1. Set `"enableCategoryFolders": true` in your `config.json`
+2. Make sure `"enableReportTag": true` is also set (required)
+3. When you stop recording, select a category in Evidence.com
+4. Your recording will be saved in a subfolder named after the category
+
+**Example folder structure:**
+```
+C:\Videos\Bodycam\
+├── Traffic Stop\
+│   └── 24-12345 - 2025-12-28_14-30-00.mp4
+├── Arrest\
+│   └── 24-67890 - 2025-12-28_15-45-00.mp4
+├── Use of Force\
+│   └── 24-11111 - 2025-12-28_16-00-00.mp4
+└── Recording Log.txt
+```
+
+**Note:** If no category is selected, the recording saves to the root output folder as usual.
 
 ### 📝 Recording Log
 - Automatically logs all recordings to `Recording Log.txt` in your output folder
@@ -332,6 +360,7 @@ To change keybinds, edit the `keybinds` section in your `config.json`:
 ## 📞 Support
 
 For support or questions:
+- Discord Server: **[Join Here](https://discord.gg/ErTSasyX)**
 - Discord: **shrky999**
 
 If you enjoy this free app, consider supporting development:
