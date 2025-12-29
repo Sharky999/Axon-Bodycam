@@ -10,6 +10,9 @@ A **free** realistic bodycam overlay application for FiveM roleplay, designed to
 
 ## 🆕 What's New
 
+### Version 1.1.4
+- **Confirm Before Stop** - New optional feature that shows a confirmation popup before stopping recording. Prevents accidental stops when typing in-game (pressing Q in chat/reports). Enable with `confirmBeforeStop: true` in config. Default: off.
+
 ### Version 1.1.3
 - **Category Folders** - New optional feature to automatically organize recordings into subfolders by category (e.g., `Traffic Stop/`, `Arrest/`). Enable with `enableCategoryFolders: true` in config. Only works when `enableReportTag` is also enabled.
 
@@ -65,11 +68,6 @@ This app uses **global hotkeys** that work even when you're in a game. To do thi
    - Install folder: `C:\Users\[You]\AppData\Local\Programs\axon-bodycam-recorder\`
 2. **Windows Defender**: Click "More info" → "Run anyway" when SmartScreen appears
 3. **VirusTotal**: Many engines flag it, but major ones (Microsoft, ESET, Kaspersky) typically don't
-
-### 🛡️ Verify for yourself
-- The source code is **100% open source** - review it on this GitHub
-- Check `main.js` - you can see exactly what the keyboard listener does
-- The app only communicates with: OBS (localhost), your browser (localhost), and GitHub (for updates)
 
 ---
 
@@ -133,6 +131,7 @@ Edit this file to customize:
   "enableRecordingLog": true,
   "enableCaptureWindow": false,
   "enableCategoryFolders": false,
+  "confirmBeforeStop": false,
   "screenScale": 0.75,
   "evidenceCategories": [
     "Traffic Stop",
@@ -167,6 +166,7 @@ Edit this file to customize:
 | `enableRecordingLog` | Enable/disable recording log file (true/false) |
 | `enableCaptureWindow` | Enable OBS Browser Source server for Game Capture users (true/false) |
 | `enableCategoryFolders` | Organize recordings into subfolders by category (requires `enableReportTag: true`) |
+| `confirmBeforeStop` | Show confirmation popup before stopping recording (prevents accidental stops) |
 | `screenScale` | Size of the bodycam screen overlay (0.5 - 1.5) |
 | `evidenceCategories` | Custom categories for the Evidence.com dropdown |
 | `keybinds` | Custom keybindings (see Keybindings section) |
@@ -198,6 +198,17 @@ After each recording, a browser window opens with an **Evidence.com-style interf
 - All fields are optional - click "Skip" to save without details
 - Automatically renames and organizes footage by report number
 - Orange "CHECK BROWSER" notification appears on overlay when upload is ready
+
+### 🛑 Confirm Before Stop (New in 1.1.4)
+When enabled, pressing your recording key while recording will show a confirmation popup asking "End Recording?" instead of immediately stopping. This prevents accidental recording stops when typing in-game (chat, reports, etc.).
+
+**Setup:**
+1. Set `"confirmBeforeStop": true` in your `config.json`
+2. When you press Q (or your recording key) while recording, a popup appears
+3. Press **Enter** or click **Yes** to stop recording
+4. Press **Escape** or click **No** to continue recording
+
+**Note:** This is disabled by default to maintain current behavior for existing users.
 
 ### 📂 Category Folders (New in 1.1.3)
 When enabled, recordings are automatically organized into subfolders based on the category you select in Evidence.com.
