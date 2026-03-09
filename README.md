@@ -371,7 +371,7 @@ To change keybinds, edit the `keybinds` section in your `config.json`:
 ## 📞 Support
 
 For support or questions:
-- Discord Server: **[Join Here](https://discord.gg/ErTSasyX)**
+- Discord Server: **[Join Here](https://discord.gg/r9dBsUckVe)**
 - Discord: **shrky999**
 
 If you enjoy this free app, consider supporting development:
